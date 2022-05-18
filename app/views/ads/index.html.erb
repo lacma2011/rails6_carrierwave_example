@@ -1,0 +1,8 @@
+<h1>Ads</h1>
+<% @ads.each do |ad| %>
+<div>
+    Name: <%= ad.title %>
+    <div><a href="/ads/edit/<%= ad.id %>">Edit</a></div>
+    <br />
+</div>
+<% end %>

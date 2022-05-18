@@ -1,0 +1,20 @@
+<h1>Edit ad #<%= @ad.id %></h1>
+
+
+<%= form_with url: "/ads/edit/" + @ad.id.to_s, multipart: true do |form| %>
+    <input type="text" name="title" value="<%= @ad.title %>" />
+    <%= file_field_tag :image %>
+
+    <input type="submit">
+<% end %>
+
+
+<a href="/">Go back</a>
+
+<hr>
+Uploaded image (if any):
+<% if @ad.image.url != nil %>
+    <img src="<%= @ad.image.url %>" />
+<% end %>
+
+
