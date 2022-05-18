@@ -15,9 +15,9 @@ class AdsController < ApplicationController
     title = params[:title]
     image_name = params[:image]
 
-    # file_data = params[:image].tempfile
-    # file_contents = file_data.read
-    # mounted_as = 'image'
+    #file_data = params[:image].tempfile
+    #file_contents = file_data.read
+    mounted_as = 'image'
 
     ad = Ad.find_by(id: id)
     uploader = ImageUploader.new(ad, mounted_as)
