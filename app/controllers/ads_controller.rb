@@ -15,10 +15,6 @@ class AdsController < ApplicationController
     title = params[:title]
     image_name = params[:image]
 
-    # logger.debug "****"
-    # file_data = params[:image]
-    # logger.debug file_data.tempfile.inspect
-
     file_data = params[:image].tempfile
     file_contents = file_data.read
     mounted_as = 'image'
@@ -27,7 +23,7 @@ class AdsController < ApplicationController
     uploader = ImageUploader.new(ad, mounted_as)
     uploader.store!(params[:image])
 
-    Ad.find_by(id: id)&.update_attributes(title: title, image: uploader)
+    ad.update_attributes(title: title, image: uploader)
 
     # redirect back to "edit"
     current_route = "/ads/edit/" + id.to_s 
