@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile_rails
-    image: myrails5project
-    container_name: rails5
+    image: myrails6project
+    container_name: rails6
     #depends_on:
     #  - frontend
     networks:
