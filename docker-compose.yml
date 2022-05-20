@@ -16,10 +16,38 @@ services:
     environment:
       - HOST=192.168.4.100
       #needed for CORS
-      - FRONTEND_HOST=192.168.2.99:3000
+      #- FRONTEND_HOST=192.168.2.99:3000
     working_dir: /usr/src
     volumes: 
       - ${PWD}:/usr/src
+
+
+  cypress_gui:
+    build:
+      context: .
+      dockerfile: Dockerfile_cypress
+    image: mycypress
+    container_name: cypress_gui1
+    depends_on:
+      - rails
+    privileged: true
+    network_mode: host
+    working_dir: /e2e
+    environment:
+      - CYPRESS_baseUrl=http://192.168.4.100:3000
+      - DISPLAY=unix${DISPLAY}
+    entrypoint:
+      - cypress
+      - open
+      - --project 
+      - .
+    volumes: 
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      - ${PWD}/cypress:/e2e
+      #careful now
+      - /var/run/docker.sock:/var/run/docker.sock
+
 
 networks:
   mynetwork:
