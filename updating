@@ -1,0 +1,34 @@
+change Gemfile
+change Dockerfile
+
+docker run --rm -v ${PWD}:/usr/src -w /usr/src -ti -u $(id -u):$(id -g) damireh/ruby2.7-node /bin/bash
+
+
+	bundle update
+	
+
+docker-compose build
+docker-compose up
+
+
+docker exec -it $(docker ps -q -f "name=rails") /bin/bash
+
+	rails app:update
+	
+
+
+docker-compose down
+docker-compose build
+docker-compose up
+
+[test]
+
+docker-compose down
+
+
+
+===============================
+
+NOTES:
+
+5.2.6.1 DIDNT WORK!  Went to 5.2.6.2 and it did (tested before "rails app:update", and after)
