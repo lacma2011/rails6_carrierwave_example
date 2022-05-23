@@ -1,23 +1,35 @@
-# Rails 5 with CarrierWave and basic page for ads database
+# Rails 6 with CarrierWave
+
+    Includes basic pages for ads database and cypress tests. Rails upgraded from Rails 5.2.3
+
+## Installation with Docker
+
+1. Build docker image when running for the first time:
+
+    `docker-compose build`
 
 
-Build docker image when running for the first time:
->docker-compose build
+2. For Cypress, enable xhost access (optional)
+
+    `xhost +"local:docker@"`
+    
+
+3. Startup:
+
+    `docker-compose up`
 
 
-Startup:
->docker-compose up
+4. Seed DB if this container is running for first time:
 
+    `docker exec $(docker ps -q -f "name=rails") bundle exec rake db:seed`
 
-Seed DB if this container is running for first time:
->docker exec $(docker ps -q -f "name=rails") bundle exec rake db:seed
+    Disregard ruby warnings.
 
-(disregard ruby warnings)
 
 
 Now you can view the application at:
 
-http://192.168.4.100:3000/
+    http://192.168.4.100:3000/
 
 
 ## Fixed IP
