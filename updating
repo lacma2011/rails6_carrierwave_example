@@ -25,6 +25,14 @@ docker-compose up
 
 docker-compose down
 
+[uncomment changes in new_framework_defaults]
+
+docker-compose up
+
+[test]
+
+docker-compose down
+
 
 
 ===============================
