@@ -8,7 +8,7 @@ COPY Gemfile* ./
 RUN bundle config set --local without 'production'
 RUN bundle install
 
-RUN gem install rails -v '5.2.7' -V --no-document
+RUN gem install rails -v '5.2.7.1' -V --no-document
 
 # for db client
 # doing exit 0 because apt throws warnings over oldstable version of debian
