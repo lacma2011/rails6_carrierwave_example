@@ -15,13 +15,13 @@ docker exec -it $(docker ps -q -f "name=rails") /bin/bash
 
 	rails app:update
 	
-
+[fix needed changes in routes.rb]
 
 docker-compose down
 docker-compose build
 docker-compose up
 
-[test]
+[test, fix anything broken]
 
 docker-compose down
 

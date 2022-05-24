@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #carrierwave storage
-mkdir -p public/uploads
+mkdir -p public/uploads && chmod 775 public/uploads
 
 bundle exec rake db:migrate 2>/dev/null || bundle exec rake db:setup
 
