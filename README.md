@@ -1,6 +1,6 @@
-# Rails 6 with CarrierWave
+# Rails 6 with CarrierWave. Cypress.
 
-    Includes basic pages for ads database and cypress tests. Rails upgraded from Rails 5.2.3
+    Includes basic pages for ads database and cypress tests. Rails upgraded from Rails 5.2.3.  Cypress tests included.
 
 ## Installation with Docker
 
