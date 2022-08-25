@@ -1,4 +1,4 @@
-# Rails 6 with CarrierWave. Cypress.
+# Rails 6 with CarrierWave. Cypress. Docker. CircleCI pipeline
 
     Includes basic pages for ads database and cypress tests. Rails upgraded from Rails 5.2.3.  Cypress tests included.
 
