@@ -1,5 +1,11 @@
 FROM cypress/included:10.6.0
 
+ARG UNAME=testuser
+ARG UID=1000
+ARG GID=1000
+RUN groupadd -g $GID -o $UNAME
+RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
+
 
 # install docker
 # we can make this unnecessary with a db reset API endpoint instead
@@ -22,3 +28,4 @@ RUN echo \
 RUN apt update -y
 RUN apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
 
+USER $UNAME
