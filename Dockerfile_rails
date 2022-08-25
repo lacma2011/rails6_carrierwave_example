@@ -15,10 +15,6 @@ RUN gem install rails -v '6.0.0' -V --no-document
 RUN apt update -y; exit 0
 RUN apt install sqlite3 -y; exit 0
 
-# Copy the main application.
-COPY . ./
-
-
 
 # Expose port 3000 to the Docker host, so we can access it
 # from the outside.

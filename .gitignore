@@ -35,3 +35,6 @@
 .*~
 
 /public/uploads
+
+cypress/cypress/screenshots
+cypress/cypress/videos
