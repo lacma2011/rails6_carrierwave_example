@@ -40,7 +40,7 @@ describe("example to-do app", () => {
     cy.get("form").submit();
 
     // revisit page to check if image is there
-    cy.visit("/ads/edit/" + Cypress.env("product_num"));
+    cy.visit("/ads/edit/1");
 
     cy.get("img")
       .should("be.visible")
